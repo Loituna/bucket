@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+Coucou c'est la liste des choses a faire une fois dans ta vie
+    <br>
+    <br>
+    <h3>Choisissez votre souhait</h3>
+
+    <ul>
+        <li>Devenir une patate <3</li>
+        <li>Travailler du PHP vanilla</li>
+        <li>Deboite une poule dans Zelda</li>
+        <li>Avoir un stage</li>
+        <li>Le retour d'Etienne en chaussette </li>
+    </ul>
+{% endblock %}
+
+{% block title %}
+{{ parent() }}| list !
+{% endblock %}
+
