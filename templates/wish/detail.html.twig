@@ -5,8 +5,15 @@
 {% endblock %}
 
 {% block body %}
-    coucou c'est ici la suite des details des choses a faire dans ta vie
 
+<section>
+    <h2> coucou c'est ici la suite des details des choses a faire dans ta vie</h2>
+        <div>{{ wish.author  }}</div>
+    <div>{{ wish.title  }}</div>
+    <div>{{ wish.description  }}</div>
+    <div>{{ wish.dateCreated | date('Y-m-d')  }}</div>
+
+</section>
 
 {% endblock %}
 
