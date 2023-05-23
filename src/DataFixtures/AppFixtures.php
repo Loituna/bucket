@@ -17,17 +17,21 @@ class AppFixtures extends Fixture
     public function addWish(ObjectManager $manager){
         $generator = Factory::create('fr_FR');
 
-        for  ($i=0;$i<50;$i++){
+        for  ($i=0;$i<10;$i++){
 
             $wish= new Wish();
 
             $wish->setAuthor($generator->firstName)
             ->setDescription(implode($generator->words))
                 ->setTitle(implode($generator->words))
-                ->setDateCreatde($generator->dateTime)
+                ->setDateCreated($generator->dateTime)
                 ->setIsPublished($generator->boolean(80));
 
         $manager->persist($wish);
         }$manager->flush();
     }
+
+
+
+
 }
