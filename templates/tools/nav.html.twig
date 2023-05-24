@@ -3,8 +3,20 @@
         <li><a href="{{ path('main_home') }}">Home</a></li>
         <li><a href="{{ path('main_pied') }}">Pied !</a></li>
         <li><a href="{{ path('main_info') }}"> About US </a></li>
-       {#<li><a href="{{ path('wish_detail') }}"> details </a></li> #}
-        <li><a href="{{ path('wish_list') }}"> Liste des truc a faire lolz </a></li>
+        <li><a href="{{ path('wish_list') }}"> Liste </a></li>
+
+
+
+
+{% if app.user %}
+        <li><a href="{{ path('app_logout') }}"> Deconnexion </a></li>
         <li><a href="{{ path('wish_add') }}"> Ajout d'un souhait </a></li>
+    <h1>Bonjour {{ app.user.pseudo }}</h1>
+{% else %}
+        <li><a href="{{ path('app_login') }}"> Connection </a></li>
+        <li><a href="{{ path('app_register') }}"> s'inscrire</a></li>
+{% endif %}
+
+
     </ul>
 </nav>

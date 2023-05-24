@@ -16,7 +16,7 @@
                 <a
                         href="{{path('wish_detail', {'id': wish.id})}}"
                         title=" View detail about  {{ wish.title}} " >
-                    {{ wish.author }}</a>
+                    {{ wish.author }} {{ wish.categorie.name }}</a>
 
             </article>
         {% endfor %}

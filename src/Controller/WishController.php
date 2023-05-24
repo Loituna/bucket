@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Wish;
 use App\Form\WishType;
 use App\Repository\WishRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,11 +24,15 @@ class WishController extends AbstractController
 
         return $this->render('wish/list.html.twig',['wishes'=>$wishes] );
     }
-
+#[IsGranted('ROLE_USER')]
     #[Route('/add', name: 'add')]
     public function ajout(Request $request, WishRepository $wishRepository){
 
+
+
         $wish = new Wish();
+
+        $wish->setAuthor($this->getUser()->getPseudo());
 
         $wishForm = $this->createForm(WishType::class,$wish);
 
